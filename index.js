@@ -45,20 +45,14 @@ const writeToFile = (path, data) => {
 
 
 const writeLog = (content) => {
-    
-    console.log('zapis v log, content:', content);
-    console.log('zapis v log, path:', logPath);
-
     let contentBuffer = '';
     const readStream = fs.createReadStream(logPath);
     readStream
     .setEncoding('UTF8')
     .on('error', (err) => {
         if (err.code === 'ENOENT') {
-            console.log('файл не был моздаг, созхдаём');
             writeToFile(logPath, content);
         }
-        // console.log('read err', err);
         readStream.close();
     })
     .on('data', (chank) =>{
