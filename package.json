@@ -4,7 +4,8 @@
     "description": "Аргументы командной строки и console",
     "main": "index.js",
     "bin": {
-      "had": "./index.js"
+      "had": "./index.js",
+      "analize": "./analizer.js"
     },
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
