@@ -5,7 +5,6 @@ const readline = require("readline");
 const rl = readline.createInterface(process.stdin, process.stdout);
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
-const { log } = require("console");
 
 const argv = yargs(hideBin(process.argv))
     .option('log', {
@@ -60,7 +59,6 @@ const writeLog = (content) => {
     })
     .on('end', () => {
         contentBuffer += content;
-        console.log('end', contentBuffer)
         writeToFile(logPath, contentBuffer);
     })
 
